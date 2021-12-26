@@ -2,7 +2,7 @@ package com.example.dagger2
 
 import dagger.Component
 
-@Component(modules = [WheelsModule::class])
+@Component(modules = [WheelsModule::class,PetrolEngineModule::class])
 interface CarComponent {
 
 //    1. COnstructor Injection

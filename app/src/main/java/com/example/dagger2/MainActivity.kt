@@ -22,7 +22,9 @@ class MainActivity : AppCompatActivity() {
 
         // 2.Field Injection -> Annotate our member variable . Cant make our member variable private
 
-        val component:CarComponent = DaggerCarComponent.create()
+//        val component:CarComponent = DaggerCarComponent.create()
+        val component:CarComponent = DaggerCarComponent.builder().petrolEngineModule(PetrolEngineModule((123)))
+            .build()
         component.inject(this)
 
         car?.drive()
@@ -30,7 +32,9 @@ class MainActivity : AppCompatActivity() {
         //3. Modules -> Used when we have to work with external libraries so make a module calss
         // and use provides annotation. Then in our componenet add moduels on top
 
-        // Declare dependency as an interface insted of a class
+        // 4. Declare dependency as an interface insted of a class
+
+
 
 
 

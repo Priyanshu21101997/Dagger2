@@ -14,12 +14,12 @@ class WheelsModule {
     @Provides
     fun provideTyres():Tyres{
         val tyre = Tyres()
-        tyre.inflate()
+        tyre.inflate() // COnfiguration changes
         return tyre
     }
 
     @Provides
-    fun provideWheels(rims:Rims,tyre:Tyres):Wheels{
+    fun provideWheels(rims:Rims,tyre:Tyres,engineInterface: EngineInterface):Wheels{
         return Wheels(rims, tyre)
     }
 
